@@ -14,7 +14,7 @@ import RxCocoa
 
 #if os(iOS)
     import UIKit
-#elseif os(OSX)
+#elseif os(macOS)
     import Cocoa
 #endif 
 
@@ -74,7 +74,7 @@ class DefaultImageService: ImageService {
                     }
                     else {
                         // fetch from network
-                        decodedImage = self.$.URLSession.rx.data(URLRequest(url: url))
+                        decodedImage = self.$.URLSession.rx.data(request: URLRequest(url: url))
                             .do(onNext: { data in
                                 self._imageDataCache.setObject(data as AnyObject, forKey: url as AnyObject)
                             })

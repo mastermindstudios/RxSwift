@@ -190,11 +190,15 @@ fi
 
 if [ "${VALIDATE_UNIX}" -eq 1 ]; then
     if [[ "${UNIX_NAME}" == "${DARWIN}" ]]; then
+        if [[ "${RX_RUN_LINUX_TESTS}" -eq 1 ]]; then
+            ./scripts/test-linux.sh
+        fi
+
         # compile and run playgrounds
     	. scripts/validate-playgrounds.sh
 
-    	# make sure osx builds
-    	for scheme in "RxExample-OSX"
+    	# make sure macOS builds
+    	for scheme in "RxExample-macOS"
     	do
     	    for configuration in ${CONFIGURATIONS[@]}
     	    do
@@ -202,10 +206,10 @@ if [ "${VALIDATE_UNIX}" -eq 1 ]; then
     	    done
     	done
 
-        #make sure all OSX tests pass
+        #make sure all macOS tests pass
         for configuration in ${CONFIGURATIONS[@]}
         do
-            rx "RxSwift-OSX" ${configuration} "" test
+            rx "RxSwift-macOS" ${configuration} "" test
         done
     elif [[ "${UNIX_NAME}" == "${LINUX}" ]]; then
         cat Package.swift | sed "s/let buildTests = false/let buildTests = true/" > Package.tests.swift
@@ -216,7 +220,7 @@ if [ "${VALIDATE_UNIX}" -eq 1 ]; then
         unsupported_os
     fi
 else
-	printf "${RED}Skipping OSX tests ...${RESET}\n"
+	printf "${RED}Skipping Unix (macOS, Linux) tests ...${RESET}\n"
 fi
 
 if [ "${VALIDATE_TVOS}" -eq 1 ]; then
@@ -262,6 +266,7 @@ else
 fi
 
 if [ "${TEST_SPM}" -eq 1 ]; then
+    rm -rf build || true
     swift build -c Release
     swift build -c Debug
 else

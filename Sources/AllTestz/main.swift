@@ -3,7 +3,7 @@ import XCTest
 import RxSwift
 
 protocol RxTestCase {
-#if os(OSX)
+#if os(macOS)
     init()
     static var allTests: [(String, (Self) -> () -> ())] { get }
 #endif
@@ -13,7 +13,7 @@ protocol RxTestCase {
 
 
 final class EventTests_ : EventTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -28,7 +28,7 @@ final class EventTests_ : EventTests, RxTestCase {
 }
 
 final class PublishSubjectTest_ : PublishSubjectTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -41,8 +41,20 @@ final class PublishSubjectTest_ : PublishSubjectTest, RxTestCase {
     ] }
 }
 
+final class AnomaliesTest_ : AnomaliesTest, RxTestCase {
+    #if os(macOS)
+    required override init() {
+        super.init()
+    }
+    #endif
+
+    static var allTests: [(String, (AnomaliesTest_) -> () -> ())] { return [
+    ("test936", AnomaliesTest.test936),
+    ] }
+}
+
 final class VirtualSchedulerTest_ : VirtualSchedulerTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -62,7 +74,7 @@ final class VirtualSchedulerTest_ : VirtualSchedulerTest, RxTestCase {
 }
 
 final class ObservableBlockingTest_ : ObservableBlockingTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -111,7 +123,7 @@ final class ObservableBlockingTest_ : ObservableBlockingTest, RxTestCase {
 }
 
 final class ObservableTimeTest_ : ObservableTimeTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -197,7 +209,7 @@ final class ObservableTimeTest_ : ObservableTimeTest, RxTestCase {
 }
 
 final class ObservableBindingTest_ : ObservableBindingTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -249,7 +261,7 @@ final class ObservableBindingTest_ : ObservableBindingTest, RxTestCase {
 }
 
 final class ObservableStandardSequenceOperatorsTest_ : ObservableStandardSequenceOperatorsTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -380,7 +392,7 @@ final class ObservableStandardSequenceOperatorsTest_ : ObservableStandardSequenc
 }
 
 final class ObservableSingleTest_ : ObservableSingleTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -403,7 +415,6 @@ final class ObservableSingleTest_ : ObservableSingleTest, RxTestCase {
     ("testDoOn_completedNever", ObservableSingleTest.testDoOn_completedNever),
     ("testDoOn_nextError", ObservableSingleTest.testDoOn_nextError),
     ("testDoOn_nextErrorNot", ObservableSingleTest.testDoOn_nextErrorNot),
-    ("testDoOn_Throws", ObservableSingleTest.testDoOn_Throws),
     ("testDoOnNext_normal", ObservableSingleTest.testDoOnNext_normal),
     ("testDoOnNext_throws", ObservableSingleTest.testDoOnNext_throws),
     ("testDoOnError_normal", ObservableSingleTest.testDoOnError_normal),
@@ -442,7 +453,7 @@ final class ObservableSingleTest_ : ObservableSingleTest, RxTestCase {
 }
 
 final class ObservableAggregateTest_ : ObservableAggregateTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -472,21 +483,20 @@ final class ObservableAggregateTest_ : ObservableAggregateTest, RxTestCase {
 }
 
 final class SubjectConcurrencyTest_ : SubjectConcurrencyTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
     #endif
 
     static var allTests: [(String, (SubjectConcurrencyTest_) -> () -> ())] { return [
-    ("testSubjectIsSynchronized", SubjectConcurrencyTest.testSubjectIsSynchronized),
     ("testSubjectIsReentrantForNextAndComplete", SubjectConcurrencyTest.testSubjectIsReentrantForNextAndComplete),
     ("testSubjectIsReentrantForNextAndError", SubjectConcurrencyTest.testSubjectIsReentrantForNextAndError),
     ] }
 }
 
 final class VariableTest_ : VariableTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -500,7 +510,7 @@ final class VariableTest_ : VariableTest, RxTestCase {
 }
 
 final class ObservableConcurrencyTest_ : ObservableConcurrencyTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -523,7 +533,7 @@ final class ObservableConcurrencyTest_ : ObservableConcurrencyTest, RxTestCase {
 }
 
 final class ReactiveTests_ : ReactiveTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -535,7 +545,7 @@ final class ReactiveTests_ : ReactiveTests, RxTestCase {
 }
 
 final class ReplaySubjectTest_ : ReplaySubjectTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -549,7 +559,7 @@ final class ReplaySubjectTest_ : ReplaySubjectTest, RxTestCase {
 }
 
 final class ObservableSubscriptionTests_ : ObservableSubscriptionTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -563,8 +573,21 @@ final class ObservableSubscriptionTests_ : ObservableSubscriptionTests, RxTestCa
     ] }
 }
 
+final class NSNotificationCenterTests_ : NSNotificationCenterTests, RxTestCase {
+    #if os(macOS)
+    required override init() {
+        super.init()
+    }
+    #endif
+
+    static var allTests: [(String, (NSNotificationCenterTests_) -> () -> ())] { return [
+    ("testNotificationCenterWithoutObject", NSNotificationCenterTests.testNotificationCenterWithoutObject),
+    ("testNotificationCenterWithObject", NSNotificationCenterTests.testNotificationCenterWithObject),
+    ] }
+}
+
 final class DisposableTest_ : DisposableTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -583,7 +606,7 @@ final class DisposableTest_ : DisposableTest, RxTestCase {
 }
 
 final class HistoricalSchedulerTest_ : HistoricalSchedulerTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -602,7 +625,7 @@ final class HistoricalSchedulerTest_ : HistoricalSchedulerTest, RxTestCase {
 }
 
 final class MainSchedulerTest_ : MainSchedulerTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -616,7 +639,7 @@ final class MainSchedulerTest_ : MainSchedulerTest, RxTestCase {
 }
 
 final class ObserverTests_ : ObserverTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -634,7 +657,7 @@ final class ObserverTests_ : ObserverTests, RxTestCase {
 }
 
 final class ConcurrentDispatchQueueSchedulerTests_ : ConcurrentDispatchQueueSchedulerTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -649,7 +672,7 @@ final class ConcurrentDispatchQueueSchedulerTests_ : ConcurrentDispatchQueueSche
 }
 
 final class QueueTest_ : QueueTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -661,7 +684,7 @@ final class QueueTest_ : QueueTest, RxTestCase {
 }
 
 final class ObservableMultipleTest_ : ObservableMultipleTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -905,7 +928,7 @@ final class ObservableMultipleTest_ : ObservableMultipleTest, RxTestCase {
 }
 
 final class AssumptionsTest_ : AssumptionsTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -920,7 +943,7 @@ final class AssumptionsTest_ : AssumptionsTest, RxTestCase {
 }
 
 final class BehaviorSubjectTest_ : BehaviorSubjectTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -938,7 +961,7 @@ final class BehaviorSubjectTest_ : BehaviorSubjectTest, RxTestCase {
 }
 
 final class ObservableCreationTests_ : ObservableCreationTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -976,7 +999,7 @@ final class ObservableCreationTests_ : ObservableCreationTests, RxTestCase {
 }
 
 final class ObservableConcurrentSchedulerConcurrencyTest_ : ObservableConcurrentSchedulerConcurrencyTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -994,7 +1017,7 @@ final class ObservableConcurrentSchedulerConcurrencyTest_ : ObservableConcurrent
 }
 
 final class ObservableDebugTest_ : ObservableDebugTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -1007,7 +1030,7 @@ final class ObservableDebugTest_ : ObservableDebugTest, RxTestCase {
 }
 
 final class AnonymousObservableTests_ : AnonymousObservableTests, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -1020,8 +1043,62 @@ final class AnonymousObservableTests_ : AnonymousObservableTests, RxTestCase {
     ] }
 }
 
+final class DriverTest_ : DriverTest, RxTestCase {
+    #if os(macOS)
+    required override init() {
+        super.init()
+    }
+    #endif
+
+    static var allTests: [(String, (DriverTest_) -> () -> ())] { return [
+    ("testDriverSharing_WhenErroring", DriverTest.testDriverSharing_WhenErroring),
+    ("testDriverSharing_WhenCompleted", DriverTest.testDriverSharing_WhenCompleted),
+    ("testVariableAsDriver", DriverTest.testVariableAsDriver),
+    ("testAsDriver_onErrorJustReturn", DriverTest.testAsDriver_onErrorJustReturn),
+    ("testAsDriver_onErrorDriveWith", DriverTest.testAsDriver_onErrorDriveWith),
+    ("testAsDriver_onErrorRecover", DriverTest.testAsDriver_onErrorRecover),
+    ("testAsDriver_deferred", DriverTest.testAsDriver_deferred),
+    ("testAsDriver_map", DriverTest.testAsDriver_map),
+    ("testAsDriver_filter", DriverTest.testAsDriver_filter),
+    ("testAsDriver_switchLatest", DriverTest.testAsDriver_switchLatest),
+    ("testAsDriver_flatMapLatest", DriverTest.testAsDriver_flatMapLatest),
+    ("testAsDriver_flatMapFirst", DriverTest.testAsDriver_flatMapFirst),
+    ("testAsDriver_doOn", DriverTest.testAsDriver_doOn),
+    ("testAsDriver_doOnNext", DriverTest.testAsDriver_doOnNext),
+    ("testAsDriver_doOnCompleted", DriverTest.testAsDriver_doOnCompleted),
+    ("testAsDriver_distinctUntilChanged1", DriverTest.testAsDriver_distinctUntilChanged1),
+    ("testAsDriver_distinctUntilChanged2", DriverTest.testAsDriver_distinctUntilChanged2),
+    ("testAsDriver_distinctUntilChanged3", DriverTest.testAsDriver_distinctUntilChanged3),
+    ("testAsDriver_distinctUntilChanged4", DriverTest.testAsDriver_distinctUntilChanged4),
+    ("testAsDriver_flatMap", DriverTest.testAsDriver_flatMap),
+    ("testAsDriver_merge", DriverTest.testAsDriver_merge),
+    ("testAsDriver_merge2", DriverTest.testAsDriver_merge2),
+    ("testAsDriver_debounce", DriverTest.testAsDriver_debounce),
+    ("testAsDriver_throttle", DriverTest.testAsDriver_throttle),
+    ("testAsDriver_scan", DriverTest.testAsDriver_scan),
+    ("testAsDriver_concat_sequenceType", DriverTest.testAsDriver_concat_sequenceType),
+    ("testAsDriver_concat", DriverTest.testAsDriver_concat),
+    ("testAsDriver_combineLatest_array", DriverTest.testAsDriver_combineLatest_array),
+    ("testAsDriver_combineLatest", DriverTest.testAsDriver_combineLatest),
+    ("testAsDriver_zip_array", DriverTest.testAsDriver_zip_array),
+    ("testAsDriver_zip", DriverTest.testAsDriver_zip),
+    ("testAsDriver_withLatestFrom", DriverTest.testAsDriver_withLatestFrom),
+    ("testAsDriver_withLatestFromDefaultOverload", DriverTest.testAsDriver_withLatestFromDefaultOverload),
+    ("testAsDriver_skip", DriverTest.testAsDriver_skip),
+    ("testAsDriver_startWith", DriverTest.testAsDriver_startWith),
+    ("testAsDriver_interval", DriverTest.testAsDriver_interval),
+    ("testAsDriver_timer", DriverTest.testAsDriver_timer),
+    ("testDriveObserver", DriverTest.testDriveObserver),
+    ("testDriveOptionalObserver", DriverTest.testDriveOptionalObserver),
+    ("testDriveNoAmbiguity", DriverTest.testDriveNoAmbiguity),
+    ("testdriveVariable", DriverTest.testdriveVariable),
+    ("testDriveOptionalVariable", DriverTest.testDriveOptionalVariable),
+    ("testDriveVariableNoAmbiguity", DriverTest.testDriveVariableNoAmbiguity),
+    ] }
+}
+
 final class CurrentThreadSchedulerTest_ : CurrentThreadSchedulerTest, RxTestCase {
-    #if os(OSX)
+    #if os(macOS)
     required override init() {
         super.init()
     }
@@ -1034,24 +1111,7 @@ final class CurrentThreadSchedulerTest_ : CurrentThreadSchedulerTest, RxTestCase
     ("testCurrentThreadScheduler_disposing2", CurrentThreadSchedulerTest.testCurrentThreadScheduler_disposing2),
     ] }
 }
-
-final class BagTest_ : BagTest, RxTestCase {
-    #if os(OSX)
-    required override init() {
-        super.init()
-    }
-    #endif
-
-    static var allTests: [(String, (BagTest_) -> () -> ())] { return [
-    ("testBag_deletionsFromStart", BagTest.testBag_deletionsFromStart),
-    ("testBag_deletionsFromEnd", BagTest.testBag_deletionsFromEnd),
-    ("testBag_immutableForeach", BagTest.testBag_immutableForeach),
-    ("testBag_removeAll", BagTest.testBag_removeAll),
-    ("testBag_complexityTestFromFront", BagTest.testBag_complexityTestFromFront),
-    ("testBag_complexityTestFromEnd", BagTest.testBag_complexityTestFromEnd),
-    ] }
-}
-#if os(OSX) || os(iOS) || os(tvOS) || os(watchOS)
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 
 func testCase<T: RxTestCase>(_ tests: [(String, (T) -> () -> ())]) -> () -> () {
     return {
@@ -1079,6 +1139,7 @@ func XCTMain(_ tests: [() -> ()]) {
     XCTMain([
         testCase(EventTests_.allTests),
         testCase(PublishSubjectTest_.allTests),
+        testCase(AnomaliesTest_.allTests),
         testCase(VirtualSchedulerTest_.allTests),
         testCase(ObservableBlockingTest_.allTests),
         testCase(ObservableTimeTest_.allTests),
@@ -1092,6 +1153,7 @@ func XCTMain(_ tests: [() -> ()]) {
         testCase(ReactiveTests_.allTests),
         testCase(ReplaySubjectTest_.allTests),
         testCase(ObservableSubscriptionTests_.allTests),
+        testCase(NSNotificationCenterTests_.allTests),
         testCase(DisposableTest_.allTests),
         testCase(HistoricalSchedulerTest_.allTests),
         testCase(MainSchedulerTest_.allTests),
@@ -1105,7 +1167,7 @@ func XCTMain(_ tests: [() -> ()]) {
         testCase(ObservableConcurrentSchedulerConcurrencyTest_.allTests),
         testCase(ObservableDebugTest_.allTests),
         testCase(AnonymousObservableTests_.allTests),
+        testCase(DriverTest_.allTests),
         testCase(CurrentThreadSchedulerTest_.allTests),
-        testCase(BagTest_.allTests),
     ])
 //}

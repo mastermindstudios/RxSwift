@@ -352,7 +352,7 @@ class UITableViewTests : RxTest {
 
         let (tableView, dataSourceSubscription) = createView()
 
-        let model: Int = try! tableView.rx.model(IndexPath(item: 1, section: 0))
+        let model: Int = try! tableView.rx.model(at: IndexPath(item: 1, section: 0))
 
         XCTAssertEqual(model, 2)
         
@@ -552,7 +552,7 @@ extension UITableViewTests {
         let dataSource = TableViewDataSourceThatImplementsCommitForRowAt()
         _ = tableView.rx.setDataSource(dataSource)
 
-        XCTAssertTrue((tableView.dataSource! as! UITableViewDataSource).responds(to: #selector(UITableViewDataSource.tableView(_:commit:forRowAt:))))
+        XCTAssertTrue((tableView.dataSource!).responds(to: #selector(UITableViewDataSource.tableView(_:commit:forRowAt:))))
     }
 }
 

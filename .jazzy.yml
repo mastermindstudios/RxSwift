@@ -27,12 +27,6 @@ custom_categories:
   - SynchronizedOnType
   - SynchronizedSubscribeType
   - SynchronizedUnsubscribeType
-- name: RxSwift/DataStructures
-  children:
-  - Bag
-  - InfiniteSequence
-  - PriorityQueue
-  - Queue
 - name: RxSwift/Disposables
   children:
   - AnonymousDisposable
@@ -47,10 +41,10 @@ custom_categories:
   - ScheduledDisposable
   - SerialDisposable
   - SingleAssignmentDisposable
-  - StableCompositeDisposable
   - SubscriptionDisposable
 - name: RxSwift/Extensions
   children:
+  - Bag+Rx
   - String+Rx
 - name: RxSwift/Observables/Implementations
   children:
@@ -132,8 +126,15 @@ custom_categories:
   - AnonymousObserver
   - ObserverBase
   - TailRecursiveSink
+- name: RxSwift/Platform/DataStructures
+  children:
+  - Bag
+  - InfiniteSequence
+  - PriorityQueue
+  - Queue
 - name: RxSwift/Platform
   children:
+  - DispatchQueue+Extensions
   - Platform.Darwin
   - Platform.Linux
 - name: RxSwift/Schedulers
@@ -207,7 +208,7 @@ custom_categories:
   - NSObject+Rx+KVORepresentable
   - NSObject+Rx+RawRepresentable
   - NSObject+Rx
-  - NSURLSession+Rx
+  - URLSession+Rx
 - name: RxCocoa/iOS/DataSources
   children:
   - RxCollectionViewReactiveArrayDataSource
@@ -265,7 +266,7 @@ custom_categories:
   - RxTableViewDelegateProxy
   - RxTextStorageDelegateProxy
   - RxTextViewDelegateProxy
-- name: RxCocoa/OSX
+- name: RxCocoa/macOS
   children:
   - NSButton+Rx
   - NSControl+Rx
