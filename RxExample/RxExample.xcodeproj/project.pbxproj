@@ -74,7 +74,7 @@
 		C849EF951C319E9D0048AC4A /* GithubSignupViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849EF851C3195180048AC4A /* GithubSignupViewModel2.swift */; };
 		C849EF961C31A3240048AC4A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A468EB1B8A8BC900BF917B /* RxSwift.framework */; };
 		C849EF971C31A3270048AC4A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A468ED1B8A8BCC00BF917B /* RxCocoa.framework */; };
-		C849EF981C31A3340048AC4A /* RxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8864C5A1C275A200073016D /* RxTests.framework */; };
+		C849EF981C31A3340048AC4A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8864C5A1C275A200073016D /* RxTest.framework */; };
 		C849EF991C31A63C0048AC4A /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809E9791BE6841C0058D948 /* Wireframe.swift */; };
 		C849EF9A1C31A7680048AC4A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80397391BD3E17D009D8B26 /* ActivityIndicator.swift */; };
 		C849EF9C1C31A8750048AC4A /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849EF9B1C31A8750048AC4A /* String+URL.swift */; };
@@ -474,7 +474,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C849EF981C31A3340048AC4A /* RxTests.framework in Frameworks */,
+				C849EF981C31A3340048AC4A /* RxTest.framework in Frameworks */,
 				C849EF971C31A3270048AC4A /* RxCocoa.framework in Frameworks */,
 				C849EF961C31A3240048AC4A /* RxSwift.framework in Frameworks */,
 			);
@@ -551,10 +551,10 @@
 				C81B3A131BC1C28400EF5A9F /* RxBlocking.framework */,
 				C81B3A151BC1C28400EF5A9F /* RxBlocking.framework */,
 				C81B3A171BC1C28400EF5A9F /* RxBlocking.framework */,
-				C8864C5A1C275A200073016D /* RxTests.framework */,
-				C8864C5C1C275A200073016D /* RxTests.framework */,
-				C8864C5E1C275A200073016D /* RxTests.framework */,
-				C8864C601C275A200073016D /* RxTests.framework */,
+				C8864C5A1C275A200073016D /* RxTest.framework */,
+				C8864C5C1C275A200073016D /* RxTest.framework */,
+				C8864C5E1C275A200073016D /* RxTest.framework */,
+				C8864C601C275A200073016D /* RxTest.framework */,
 				8479BC661C3BC98F00FB8B54 /* AllTests-iOS.xctest */,
 				8479BC681C3BC98F00FB8B54 /* AllTests-tvOS.xctest */,
 				8479BC6A1C3BC98F00FB8B54 /* AllTests-OSX.xctest */,
@@ -999,7 +999,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Krunoslav Zaher";
 				TargetAttributes = {
 					C83366DC1AD0293800C668A7 = {
@@ -1164,31 +1164,31 @@
 			remoteRef = C81B3A161BC1C28400EF5A9F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C8864C5A1C275A200073016D /* RxTests.framework */ = {
+		C8864C5A1C275A200073016D /* RxTest.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = RxTests.framework;
+			path = RxTest.framework;
 			remoteRef = C8864C591C275A200073016D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C8864C5C1C275A200073016D /* RxTests.framework */ = {
+		C8864C5C1C275A200073016D /* RxTest.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = RxTests.framework;
+			path = RxTest.framework;
 			remoteRef = C8864C5B1C275A200073016D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C8864C5E1C275A200073016D /* RxTests.framework */ = {
+		C8864C5E1C275A200073016D /* RxTest.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = RxTests.framework;
+			path = RxTest.framework;
 			remoteRef = C8864C5D1C275A200073016D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C8864C601C275A200073016D /* RxTests.framework */ = {
+		C8864C601C275A200073016D /* RxTest.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = RxTests.framework;
+			path = RxTest.framework;
 			remoteRef = C8864C5F1C275A200073016D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1419,8 +1419,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1471,8 +1473,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1687,8 +1691,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
